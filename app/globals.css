@@ -449,7 +449,8 @@ textarea {
   box-shadow: var(--shadow);
 }
 
-.image-frame img {
+.image-frame img,
+.image-frame .responsive-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -520,7 +521,8 @@ textarea {
   overflow: hidden;
 }
 
-.project-card img {
+.project-card img,
+.project-card .project-image {
   width: 100%;
   height: 260px;
   object-fit: cover;

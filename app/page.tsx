@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { PageHero, SectionIntro } from "@/components/site-shell";
@@ -108,7 +109,14 @@ export default function HomePage() {
           <div className="project-grid">
             {projects.slice(0, 3).map((project) => (
               <article key={project.title} className="project-card">
-                <img src={project.image} alt={project.title} loading="lazy" />
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={1008}
+                  height={490}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw"
+                  className="project-image"
+                />
                 <div className="project-card-body">
                   <span className="project-category">{project.category}</span>
                   <h3>{project.title}</h3>
@@ -146,9 +154,13 @@ export default function HomePage() {
             </div>
           </div>
           <div className="image-frame">
-            <img
+            <Image
               src="/site-images/project-marine-barge.jpg"
               alt="Marine support vessel at port in Walvis Bay"
+              width={1008}
+              height={490}
+              sizes="(max-width: 1080px) 100vw, 46vw"
+              className="responsive-image"
             />
           </div>
         </div>

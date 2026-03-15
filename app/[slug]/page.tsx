@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -100,9 +101,13 @@ function AboutPage() {
             ))}
           </div>
           <div className="image-frame">
-            <img
+            <Image
               src="/site-images/dockside-support.jpg"
               alt="Diclas support vehicle positioned dockside"
+              width={1008}
+              height={490}
+              sizes="(max-width: 1080px) 100vw, 46vw"
+              className="responsive-image"
             />
           </div>
         </div>
@@ -252,7 +257,14 @@ function ProjectsPage() {
           <div className="project-grid">
             {projects.map((project) => (
               <article key={project.title} className="project-card">
-                <img src={project.image} alt={project.title} loading="lazy" />
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={1008}
+                  height={490}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw"
+                  className="project-image"
+                />
                 <div className="project-card-body">
                   <span className="project-category">{project.category}</span>
                   <h3>{project.title}</h3>
@@ -282,9 +294,13 @@ function ProjectsPage() {
             </ul>
           </div>
           <div className="image-frame">
-            <img
+            <Image
               src="/site-images/project-dockside-transfer.jpg"
               alt="Dockside transfer equipment and support vehicle"
+              width={1008}
+              height={490}
+              sizes="(max-width: 1080px) 100vw, 46vw"
+              className="responsive-image"
             />
           </div>
         </div>
